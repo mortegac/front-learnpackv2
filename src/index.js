@@ -1,17 +1,53 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Suspense, lazy } from "react";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+import * as ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle, Theme } from "./styles/index";
+
+const Root = lazy(() => import("./routes/root"));
+const Uno = lazy(() => import("./routes/uno"));
+const Dos = lazy(() => import("./routes/dos"));
+const ErrorPage = lazy(() => import("./routes/error-page"));
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    // Rutas anidadas
+    children: [
+      {
+        path: "uno",
+        element: <Uno />,
+      },
+      {
+        path: "dos",
+        element: <Dos />,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <Suspense fallback={<div>Loading...</div>}>
+      <ThemeProvider theme={Theme}>
+        <GlobalStyle theme={Theme} />
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </Suspense>
   </React.StrictMode>
 );
+
+
+// import reportWebVitals from './reportWebVitals';
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();
