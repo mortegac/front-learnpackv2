@@ -10,7 +10,7 @@ export const SectionContainerBase = styled.section`
   height: calc(100vh - 160px);
   border-radius: ${(props) => props.theme.button.borderRadius};
   border: none;
-  margin: 86px 8px;
+  margin: 36px 8px;
   padding: ${(props) => props.theme.sectionContainer.padding.desktop};
   position: relative;
   padding: ${(props) => props.boxed && "64px 24px"};
@@ -24,10 +24,12 @@ export const SectionContainerBase = styled.section`
     padding-bottom: ${(props) => props.paddingMobileBottom};
     padding: ${(props) => props.boxed && "0 16px"};
     borderRadius: 0;
+    margin:0px;
   }
   
   @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
     // margin: ${(props) => props.boxed && "32px 0"};
+    margin:0px;
     borderRadius: 0;
   }
 `;

@@ -13,7 +13,7 @@ export default function Root() {
             <PageContainer>
                 <Navbar />
                 <SectionContainer>
-                    <Menu />
+                    {/* <Menu /> */}
                     <SliceContainer>
                         <Outlet />
                     </SliceContainer>

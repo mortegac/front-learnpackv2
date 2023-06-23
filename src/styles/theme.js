@@ -103,7 +103,7 @@ export const Theme = {
     },
     p: {
       desktop: {
-        fontSize: "14px",
+        fontSize: "12px",
         fontWeight: "400",
         lineHeight: "8px",
       },
@@ -128,7 +128,7 @@ export const Theme = {
   },
   colors: {
     bgBody: "#EFF1F4",
-    bgNavbar: "#ffffff",
+    bgNavbar: "#EFF1F4",
     primary: "rgb(62 71 88);",
     secondary: "#457Eff",
     bgHover: "#9d9d9d",
@@ -155,18 +155,19 @@ export const Theme = {
     lighterGray: "#778492",
   },
   button: {
-    borderRadius: "8px",
-    height: "46px",
-    padding: "10px 30px",
-    paddingMobile: "10px 10px",
+    borderRadius: "6px",
+    height: "26px",
+    padding: "8px 12px",
+    paddingMobile: "0px 10px",
   },
 
   breakpoints: {
-    xs: "450px",
+    xs: "400px",
     sm: "600px",
     md: "960px",
   },
   space: {
+    s0: "0px",
     s4: "4px",
     s8: "8px",
     s12: "12px",

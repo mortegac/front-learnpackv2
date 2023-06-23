@@ -38,23 +38,23 @@ export const Header = ({
     <NavContainer>
       {/* <pre>{JSON.stringify(open)}</pre> */}
       <SectionContainer id="home" >
-        <LeftWrap style={{ display: "none" }}>
+        {/* <LeftWrap style={{ display: "none" }}>
           <picture>
             <source srcSet={"logo.png"} media="(max-width: 500px)" />
             <source srcSet={"logo.png"} media="(max-width: 960px)" />
-            <img style={{ width: '3 0%' }} src={"logo.png"} alt="LearnPack" />
+            <img style={{ width: '30%' }} src={"logo.png"} alt="LearnPack" />
           </picture>
 
           <BoxButton style={{ marginRight: '32px' }} fullwidth={true}>
 
             <BoxButton style={{ marginRight: '8px' }} fullwidth={true}>
-              <svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="15" height="15" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.07865 0.268293C7.7791 -0.089431 7.29344 -0.089431 6.9939 0.268293L0.224659 8.35228L0.135905 8.47915C-0.0711882 8.83615 -0.0416035 9.32974 0.224659 9.64771L6.9939 17.7317L7.10013 17.8377C7.39907 18.085 7.81238 18.0497 8.07865 17.7317L8.1674 17.6048C8.37449 17.2478 8.34491 16.7542 8.07865 16.4363L2.61836 9.91603H17.2331L17.371 9.90127C17.7288 9.82371 18.0001 9.4497 18.0001 9.00002C18.0001 8.49412 17.6567 8.08401 17.2331 8.08401H2.61833L8.07865 1.56373L8.1674 1.43686C8.37449 1.07986 8.34491 0.58627 8.07865 0.268293Z" fill="#3F4C5A" />
               </svg>
             </BoxButton>
 
             <BoxButton style={{ marginRight: '8px' }} fullwidth={true}>
-              <svg width="24" height="24" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="15" height="15" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9157 0.268293C11.2153 -0.089431 11.7009 -0.089431 12.0005 0.268293L18.7697 8.35228L18.8585 8.47915C19.0656 8.83615 19.036 9.32974 18.7697 9.64771L12.0005 17.7317L11.8943 17.8377C11.5953 18.085 11.182 18.0497 10.9157 17.7317L10.827 17.6048C10.6199 17.2478 10.6495 16.7542 10.9157 16.4363L16.376 9.91609H1.76155L1.62367 9.90134C1.26586 9.82378 0.994516 9.44977 0.994516 9.00008C0.994516 8.49419 1.33793 8.08407 1.76155 8.08407H16.3761L10.9157 1.56373L10.827 1.43686C10.6199 1.07986 10.6495 0.58627 10.9157 0.268293Z" fill="#3F4C5A" />
               </svg>
             </BoxButton>
@@ -63,7 +63,7 @@ export const Header = ({
 
 
           <ButtonPrimary fullwidth={true}>
-            <svg width="24" height="22" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="15" height="13" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_544_516)">
                 <path d="M2.10358 4.59753L0.8353 3.2226L2.10358 1.84767" stroke="white" stroke-width="0.505448" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M5.90039 4.59753L7.16867 3.2226L5.90039 1.84767" stroke="white" stroke-width="0.505448" stroke-linecap="round" stroke-linejoin="round" />
@@ -79,7 +79,7 @@ export const Header = ({
           </ButtonPrimary>
 
           <ButtonSecondary fullwidth={true}>
-            <svg width="24" height="23" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="15" height="14" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="0.11145" y="0.496338" width="4.29883" height="4.68463" rx="1.51634" fill="#EAF5FE" />
               <path d="M1.00952 2.76089L1.88406 3.70897L3.51215 1.94397" stroke="#457EFF" stroke-width="0.505448" stroke-linecap="round" />
             </svg>
@@ -87,7 +87,7 @@ export const Header = ({
           </ButtonSecondary>
 
           <ButtonTertiary fullwidth={true}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="15" height="15"viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="12" r="12" fill="#467FFF" />
               <circle cx="12" cy="12" r="10" fill="white" />
               <circle cx="12" cy="12" r="3" fill="#467FFF" />
@@ -97,9 +97,9 @@ export const Header = ({
 
 
 
-        </LeftWrap>
+        </LeftWrap> */}
 
-        <RightWrap style={{ display: "none" }}>
+        {/* <RightWrap style={{ display: "none" }}>
           <ul>
 
             <Link to={`uno`}>
@@ -138,19 +138,19 @@ export const Header = ({
             </BoxButton>
 
           </a>
-        </RightWrap>
+        </RightWrap> */}
 
         {/* MOBILE */}
 
         {/* <MobileWrap > */}
         <LeftWrap>
           <picture style={{ margin: '8px' }}>
-            <source srcSet={"logo.png"} media="(max-width: 500px)" />
-            <source srcSet={"logo.png"} media="(max-width: 960px)" />
+            <source srcSet={"logo.png"} media="(max-width: 100px)" />
+            <source srcSet={"logo.png"} media="(max-width: 160px)" />
             <img src={"logo.png"} alt="LearnPack" />
           </picture>
-          <ButtonPrimary >
-            <svg width="24" height="22" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ButtonPrimary fullwidth>
+            <svg width="15" height="13" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_544_516)">
                 <path d="M2.10358 4.59753L0.8353 3.2226L2.10358 1.84767" stroke="white" stroke-width="0.505448" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M5.90039 4.59753L7.16867 3.2226L5.90039 1.84767" stroke="white" stroke-width="0.505448" stroke-linecap="round" stroke-linejoin="round" />
@@ -162,6 +162,7 @@ export const Header = ({
                 </clipPath>
               </defs>
             </svg>
+
             <p>Build</p>
           </ButtonPrimary>
 

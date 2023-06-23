@@ -59,7 +59,7 @@ export const ButtonPrimary = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
+  margin-right:${(props) => props.theme.space.s16};
   font-family: ${(props) => props.theme.typography.fontFamily};
   line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
   font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
@@ -70,25 +70,25 @@ export const ButtonPrimary = styled.button`
   white-space: nowrap;
   border-radius: ${(props) => props.theme.button.borderRadius};
   border: none;
+  height: ${(props) => props.theme.button.height};
   color:${(props) => props.theme.colors.white};
   padding:${(props) => props.theme.button.padding};
   
   :hover {
+    // background-color: ${(props) => props.theme.colors.bgHover};
+    // color: ${(props) => props.theme.colors.white};
+    // border: 1px solid ${(props) => props.theme.colors.bgHover};
   }
-  
-  margin-right:${(props) => props.theme.space.s8};
-  
-
   ${(props) =>
-    props.fullwidth ? ` 
-        margin-right:${(props) => props.theme.space.s0};
-      `
-      : ``
-  }
-  
-  svg {
-    margin-right:${(props) => props.theme.space.s4};
-  }
+    props.fullwidth ? `
+      svg {
+        margin-right:${(props) => props.theme.space.s12};
+      }
+  `
+      : `svg {
+        margin-right:0;
+      }
+  `}
   p {
     
     font-family: ${(props) => props.theme.typography.fontFamily};
@@ -97,6 +97,10 @@ export const ButtonPrimary = styled.button`
     cursor: pointer; 
     color: ${(props) => props.theme.colors.white};
   }
+
+  // @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  //   width: 100%;
+  // }
 `;
 
 export const ButtonSecondary = styled.button`
@@ -104,89 +108,44 @@ export const ButtonSecondary = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
-  font-family: ${(props) => props.theme.typography.fontFamily};
-  line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-  font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
+  // margin-right:${(props) => props.theme.space.s16};
   cursor: pointer; 
-  color: ${(props) => props.theme.colors.white};
-  // background: ${(props) => props.theme.colors.secondary};
-    
+  color: ${(props) => props.theme.colors.lighterGray};
+  background-color: ${(props) => props.theme.colors.white};
   white-space: nowrap;
   border-radius: ${(props) => props.theme.button.borderRadius};
-  border: none;
-  color:${(props) => props.theme.colors.white};
+  border: solid 1px ${(props) => props.theme.colors.lighterGray};
+  height: ${(props) => props.theme.button.height};
   padding:${(props) => props.theme.button.padding};
   
-  :hover {
-  }
-  
-  margin-right:${(props) => props.theme.space.s8};
-  
-
+  // :hover {
+    // background-color: ${(props) => props.theme.colors.bgHover};
+    // color: ${(props) => props.theme.colors.white};
+    // border: 1px solid ${(props) => props.theme.colors.bgHover};
+  // }
   ${(props) =>
-    props.fullwidth ? ` 
-        margin-right:${(props) => props.theme.space.s0};
-      `
-      : ``
-  }
-  
-  svg {
-    margin-right:${(props) => props.theme.space.s4};
-  }
+    props.fullwidth ? `
+      svg {
+        // margin-right:${(props) => props.theme.space.s12};
+      }
+  `
+      : `svg {
+        margin-right:0;
+      }
+  `}
   p {
     
     font-family: ${(props) => props.theme.typography.fontFamily};
     line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
     font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
     cursor: pointer; 
-    color: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.lighterGray};
   }
+
+  // @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  //   width: 100%;
+  // }
 `;
-
-// export const ButtonSecondary = styled.button`
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   // margin-right:${(props) => props.theme.space.s16};
-//   cursor: pointer; 
-//   color: ${(props) => props.theme.colors.lighterGray};
-//   background-color: ${(props) => props.theme.colors.white};
-//   white-space: nowrap;
-//   border-radius: ${(props) => props.theme.button.borderRadius};
-//   border: solid 1px ${(props) => props.theme.colors.lighterGray};
-//   height: ${(props) => props.theme.button.height};
-//   padding:${(props) => props.theme.button.padding};
-
-//   // :hover {
-//     // background-color: ${(props) => props.theme.colors.bgHover};
-//     // color: ${(props) => props.theme.colors.white};
-//     // border: 1px solid ${(props) => props.theme.colors.bgHover};
-//   // }
-//   ${(props) =>
-//     props.fullwidth ? `
-//       svg {
-//         // margin-right:${(props) => props.theme.space.s12};
-//       }
-//   `
-//       : `svg {
-//         margin-right:0;
-//       }
-//   `}
-//   p {
-
-//     font-family: ${(props) => props.theme.typography.fontFamily};
-//     line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-//     font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-//     cursor: pointer; 
-//     color: ${(props) => props.theme.colors.lighterGray};
-//   }
-
-//   // @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-//   //   width: 100%;
-//   // }
-// `;
 
 export const ButtonTertiary = styled.button`
   display: flex;
@@ -235,42 +194,40 @@ export const ButtonTertiary = styled.button`
 `;
 
 export const NavContainer = styled.div`
-
-  position: fixed;
+width: 350px;
+  background-color: pink;
+  position: absolute;
+  z-index: 9000;
   border-radius: ${(props) => props.theme.button.borderRadius};
   border: none;
-  top:${(props) => props.theme.space.s0};
-  left: auto;
+  top:0;
+  
+  right: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
 
   align-items: center;
-  width: 100vw;
-  
-  // button {
-  //   padding: 8px 16px;
-  //   font-size: 16px;
-  //   height: 40px;
-  // }
-  
-  background: ${(props) => props.theme.colors.bgNavbar};
+  max-width: 350px;
+  height: 650px;
+  // width: calc(100vw - 60px);
+
+  button {
+    padding: 8px 16px;
+    font-size: 16px;
+    height: 40px;
+  }
+
+  // background: ${(props) => props.theme.colors.bgNavbar};
   color: ${(props) => props.theme.colors.secondary};
-  z-index: 200;
-  height: 60px;
+  // border-bottom: 1px solid rgba(0, 17, 51, 0.05);
+  height: 71px;
   width: 98%;
   
-  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
-    max-width: 1136px;
-    top:${(props) => props.theme.space.s12};
-    width: calc(100vw - 60px);
-  }
-    border-radius:0px;
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
     width: 100%;
     justify-content: space-between;
-    top:0px;
-  // @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
-  // }
+  }
 
   .navButton {
     height: 24px;
@@ -286,7 +243,9 @@ export const SectionContainer = styled.div`
   align-items: center;
   padding: 0 24px;
   
-
+  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    padding: 0px;
+  }
 
   a {
     display: flex;
@@ -369,7 +328,6 @@ export const LeftWrap = styled.div`
   
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     img {
-      
       margin-right: 32px;
     }
   }
@@ -530,18 +488,23 @@ export const RightWrap = styled.div`
 
 `;
 export const SidebarContainer = styled.div`
-  // display: none;
-  z-index: 100;
+position: absolute;
+top: 0px;
+margin-top: -500px
+// display: none;
+  z-index: 2000;
   flex-direction: column;
   justify-content: flex-start;
   align-items: space-between;
   width: 350px;
-  position: fixed;
-  top: 0;
-  bottom: 0;
+  height: 90vh;
+  // position: absolute;
+  // top: -350px;
+  // bottom: 0;
   
-  right: 0;
-  background: rgb(250, 250, 251);
+  right: 350px;;
+  // background: rgb(250, 250, 251);
+  background-color: pink;
   transform: translateX(100%);
   transition: transform 0.3s ease;
 
@@ -648,10 +611,7 @@ export const SidebarContainer = styled.div`
       }
     }
   }
-  // @media (max-width: 1000px) {
-  //   display: flex;
-  // }
   &.on {
-    transform: translateX(0%);
+    // transform: translateX(0%);
   }
 `;
