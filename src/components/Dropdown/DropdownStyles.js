@@ -4,6 +4,7 @@ export const DropdownContainer = styled.div`
   margin-top: -40px;
   margin-bottom: -40px;
   
+
   svg {
     margin-left: 10px;
   }
@@ -33,7 +34,7 @@ export const DropdownContainer = styled.div`
   }
 
   a.selected li .underline {
-    background: #ff6100;
+    // background: #ff6100;
     opacity: 1;
   }
 
@@ -93,11 +94,11 @@ export const DropdownContainer = styled.div`
     position: absolute;
     pointer-events: none;
     width: 100%;
-    left: 0;
-    right: 0;
-    top: 0px;
+    // left: 0;
     // padding: 22px 0 17px 34px;
-    padding-top: 57px;
+    right: 60px;
+    top: -4px;
+    padding-top: 48px;
     line-height: 3;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -117,7 +118,7 @@ export const DropdownContainer = styled.div`
         width: 100%;
         transition: background 0.3s ease;
         :hover {
-          background: rgba(0, 17, 51, 0.05);
+          // background: rgba(0, 17, 51, 0.05);
         }
         .item {
           width: 100%;

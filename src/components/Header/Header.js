@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import useStore from '../../store'
+
 import { Link } from "react-router-dom";
+import { toast } from 'react-hot-toast'
 import { Dropdown } from "../Dropdown";
 
 import {
@@ -21,8 +24,12 @@ export const Header = ({
   pagename,
   activeDocMeta,
 }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [langToggle, setLangToggle] = useState(false);
+
+  const state = useStore()
+  const { setState } = state;
+
 
   const contentAction = [
     { name: "Test", link: "uno", selected: true },
@@ -34,122 +41,22 @@ export const Header = ({
     setLangToggle(false);
   };
 
+  const HandlerState = (item) => {
+    setOpen(!open);
+    setLangToggle(false);
+    setState({ selected: item })
+  };
+
   return (
     <NavContainer>
-      {/* <pre>{JSON.stringify(open)}</pre> */}
-      <SectionContainer id="home" >
-        {/* <LeftWrap style={{ display: "none" }}>
-          <picture>
-            <source srcSet={"logo.png"} media="(max-width: 500px)" />
-            <source srcSet={"logo.png"} media="(max-width: 960px)" />
-            <img style={{ width: '30%' }} src={"logo.png"} alt="LearnPack" />
-          </picture>
-
-          <BoxButton style={{ marginRight: '32px' }} fullwidth={true}>
-
-            <BoxButton style={{ marginRight: '8px' }} fullwidth={true}>
-              <svg width="15" height="15" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.07865 0.268293C7.7791 -0.089431 7.29344 -0.089431 6.9939 0.268293L0.224659 8.35228L0.135905 8.47915C-0.0711882 8.83615 -0.0416035 9.32974 0.224659 9.64771L6.9939 17.7317L7.10013 17.8377C7.39907 18.085 7.81238 18.0497 8.07865 17.7317L8.1674 17.6048C8.37449 17.2478 8.34491 16.7542 8.07865 16.4363L2.61836 9.91603H17.2331L17.371 9.90127C17.7288 9.82371 18.0001 9.4497 18.0001 9.00002C18.0001 8.49412 17.6567 8.08401 17.2331 8.08401H2.61833L8.07865 1.56373L8.1674 1.43686C8.37449 1.07986 8.34491 0.58627 8.07865 0.268293Z" fill="#3F4C5A" />
-              </svg>
-            </BoxButton>
-
-            <BoxButton style={{ marginRight: '8px' }} fullwidth={true}>
-              <svg width="15" height="15" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9157 0.268293C11.2153 -0.089431 11.7009 -0.089431 12.0005 0.268293L18.7697 8.35228L18.8585 8.47915C19.0656 8.83615 19.036 9.32974 18.7697 9.64771L12.0005 17.7317L11.8943 17.8377C11.5953 18.085 11.182 18.0497 10.9157 17.7317L10.827 17.6048C10.6199 17.2478 10.6495 16.7542 10.9157 16.4363L16.376 9.91609H1.76155L1.62367 9.90134C1.26586 9.82378 0.994516 9.44977 0.994516 9.00008C0.994516 8.49419 1.33793 8.08407 1.76155 8.08407H16.3761L10.9157 1.56373L10.827 1.43686C10.6199 1.07986 10.6495 0.58627 10.9157 0.268293Z" fill="#3F4C5A" />
-              </svg>
-            </BoxButton>
-
-          </BoxButton>
-
-
-          <ButtonPrimary fullwidth={true}>
-            <svg width="15" height="13" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_544_516)">
-                <path d="M2.10358 4.59753L0.8353 3.2226L2.10358 1.84767" stroke="white" stroke-width="0.505448" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M5.90039 4.59753L7.16867 3.2226L5.90039 1.84767" stroke="white" stroke-width="0.505448" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M2.94233 5.68985L5.06477 0.755509" stroke="white" stroke-width="0.505448" stroke-linecap="round" />
-              </g>
-              <defs>
-                <clipPath id="clip0_544_516">
-                  <rect width="7.17446" height="5" fill="white" transform="translate(0.421326 0.72229)" />
-                </clipPath>
-              </defs>
-            </svg>
-            <p>Build</p>
-          </ButtonPrimary>
-
-          <ButtonSecondary fullwidth={true}>
-            <svg width="15" height="14" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0.11145" y="0.496338" width="4.29883" height="4.68463" rx="1.51634" fill="#EAF5FE" />
-              <path d="M1.00952 2.76089L1.88406 3.70897L3.51215 1.94397" stroke="#457EFF" stroke-width="0.505448" stroke-linecap="round" />
-            </svg>
-            <p>Test</p>
-          </ButtonSecondary>
-
-          <ButtonTertiary fullwidth={true}>
-            <svg width="15" height="15"viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="12" cy="12" r="12" fill="#467FFF" />
-              <circle cx="12" cy="12" r="10" fill="white" />
-              <circle cx="12" cy="12" r="3" fill="#467FFF" />
-            </svg>
-            <p>Reset</p>
-          </ButtonTertiary>
-
-
-
-        </LeftWrap> */}
-
-        {/* <RightWrap style={{ display: "none" }}>
-          <ul>
-
-            <Link to={`uno`}>
-              <li class="nav-item">
-                <svg width="24" height="27" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8.18182 0H0.818182C0.364091 0 0 0.346111 0 0.777778V5.44444C0 5.87222 0.364091 6.22222 0.818182 6.22222H2.86364V7H6.13636V6.22222H8.18182C8.63182 6.22222 8.99591 5.87222 8.99591 5.44444L9 0.777778C9 0.346111 8.63182 0 8.18182 0ZM8.18182 5.44444H0.818182V0.777778H8.18182V5.44444ZM6.13636 3.11111L3.27273 4.66667V1.55556L6.13636 3.11111Z" fill="#A3B5C9" />
-                </svg>
-
-                Explication
-                <div class="underline"></div>
-              </li>
-            </Link>
-            <Link to={`dos`}>
-              <li class="nav-item">
-                <svg width="24" height="27" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.97348 0C4.61569 0 5.94696 1.31446 5.94696 2.93593C5.94696 3.98315 5.39166 4.90231 4.55594 5.42202L4.32681 6.45628C4.27543 6.68866 4.06705 6.85434 3.82615 6.85434H2.12082C1.87992 6.85434 1.67154 6.68866 1.62015 6.45628L1.39154 5.42234C0.555527 4.90269 0 3.98337 0 2.93593C0 1.31446 1.33127 0 2.97348 0Z" fill="#A3B5C9" />
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25201 1.77705C2.20693 2.01285 1.95 3.3411 1.89721 3.61195C1.84443 3.8828 2.07067 4.12558 2.29279 4.12558C2.51492 4.12558 2.54428 4.12558 2.63545 4.12558C2.72662 4.12558 2.86235 4.18882 2.81126 4.41911C2.76017 4.64939 2.70734 4.8863 2.6554 5.11006C2.60347 5.33382 2.86373 5.42404 2.97658 5.2496C3.08942 5.07515 3.93195 3.74371 4.02891 3.56465C4.12587 3.38559 3.96706 3.1087 3.72801 3.1087C3.48897 3.1087 3.39006 3.1087 3.26467 3.1087C3.13929 3.1087 3.12169 3.02031 3.1672 2.83823C3.2127 2.65615 3.26742 2.41797 3.35203 2.06892C3.43664 1.71987 3.09569 1.53027 2.91604 1.53027C2.73639 1.53027 2.54322 1.53027 2.48997 1.53027C2.43671 1.53027 2.29709 1.54125 2.25201 1.77705Z" fill="white" />
-                  <path d="M3.73899 7.10352H2.20579C2.03109 7.10352 1.88947 7.24335 1.88947 7.41585C1.88947 7.58835 2.03109 7.72818 2.20579 7.72818H3.73899C3.9137 7.72818 4.05532 7.58835 4.05532 7.41585C4.05532 7.24335 3.9137 7.10352 3.73899 7.10352Z" fill="#979797" />
-                  <path d="M3.60993 7.97742H2.33592C2.16122 7.97742 2.01959 8.11725 2.01959 8.28975C2.01959 8.46225 2.16122 8.60208 2.33592 8.60208H3.60993C3.78464 8.60208 3.92626 8.46225 3.92626 8.28975C3.92626 8.11725 3.78464 7.97742 3.60993 7.97742Z" fill="#979797" />
-                </svg>
-
-                Solution
-                <div class="underline"></div>
-              </li>
-            </Link>
-
-          </ul>
-          <ul style={{ backgroundColor: "#F5F8FE" }}>
-            <Dropdown activeDocMeta={{}} />
-          </ul>
-          <a onClick={() => setOpen(!open)}>
-            <BoxButton>
-              <svg width="24" height="16" onClick={HamburgerBehavior} viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path opacity="0.8" d="M8 15.7979H24V13.1649H8V15.7979ZM0 0V2.63299H24V0H0ZM8 9.21546H24V6.58247H8V9.21546Z" fill="#3F4C5A" />
-              </svg>
-            </BoxButton>
-
-          </a>
-        </RightWrap> */}
-
-        {/* MOBILE */}
-
-        {/* <MobileWrap > */}
+      <SectionContainer id="navTop" >
         <LeftWrap>
-          <picture style={{ margin: '8px' }}>
+          <picture>
             <source srcSet={"logo.png"} media="(max-width: 100px)" />
             <source srcSet={"logo.png"} media="(max-width: 160px)" />
             <img src={"logo.png"} alt="LearnPack" />
           </picture>
-          <ButtonPrimary fullwidth>
+          <ButtonPrimary fullwidth onClick={() => toast.success('Build completed!')}>
             <svg width="15" height="13" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_544_516)">
                 <path d="M2.10358 4.59753L0.8353 3.2226L2.10358 1.84767" stroke="white" stroke-width="0.505448" stroke-linecap="round" stroke-linejoin="round" />
@@ -184,16 +91,10 @@ export const Header = ({
 
 
 
-
-
-
-        {/* </MobileWrap> */}
-
         <SidebarContainer className={open && "on"}>
 
           {open && (
             <>
-
               <div className="header-container" id="NavMobile">
                 <BoxButton>
                   <svg
@@ -214,8 +115,50 @@ export const Header = ({
                   </svg>
                 </BoxButton>
               </div>
-              <div className="footer-container">
+              <div className="container">
+                <ul>
+                  <div className="box">
+                    <span>{`01/${state.files.length} Solved exercise`}</span>
+                    <BoxButton style={{ padding: 0, paddingRight: '10px' }}>
+                      <svg width="30" height="30" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10.5" cy="10.4999" r="10.5" transform="rotate(-180 10.5 10.4999)" fill="#EFF1F4" />
+                        <path d="M14.7955 7.39493H6.20455C5.67477 7.39493 5.25 7.72635 5.25 8.13969V12.6082C5.25 13.0179 5.67477 13.353 6.20455 13.353H8.59091V14.0978H12.3091V13.353H14.7955C15.3205 13.353 15.7452 13.0179 15.7452 12.6082L15.75 8.13969C15.75 7.72635 15.3205 7.39493 14.7955 7.39493ZM14.7955 12.6082H6.20455V8.13969H14.7955V12.6082ZM12.3091 10.374L9.06818 11.8635V8.88445L12.3091 10.374Z" fill="#A3B5C9" />
+                      </svg>
+                    </BoxButton>
 
+                    <BoxButton style={{ padding: 0 }}>
+                      <svg width="30" height="30" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10.5" cy="10.4999" r="10.5" transform="rotate(-180 10.5 10.4999)" fill="#EFF1F4" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.4652 6.27779C12.6206 6.27779 14.3679 7.74623 14.3679 9.55763C14.3679 10.7275 13.6391 11.7544 12.5422 12.3349L12.2414 13.4904C12.174 13.75 11.9005 13.935 11.5843 13.935H9.34607C9.02989 13.935 8.75639 13.75 8.68895 13.4904L8.38889 12.3353C7.29163 11.7548 6.5625 10.7278 6.5625 9.55763C6.5625 7.74623 8.3098 6.27779 10.4652 6.27779Z" fill="#A3B5C9" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.51832 8.26292C9.45916 8.52634 9.12193 10.0102 9.05265 10.3128C8.98337 10.6153 9.28031 10.8866 9.57185 10.8866C9.86338 10.8866 9.90192 10.8866 10.0216 10.8866C10.1412 10.8866 10.3194 10.9572 10.2523 11.2145C10.1853 11.4717 10.1159 11.7364 10.0478 11.9863C9.97961 12.2363 10.3212 12.3371 10.4693 12.1422C10.6174 11.9474 11.7232 10.4599 11.8505 10.2599C11.9778 10.0599 11.7693 9.75055 11.4556 9.75055C11.1418 9.75055 11.012 9.75055 10.8474 9.75055C10.6829 9.75055 10.6598 9.65181 10.7195 9.4484C10.7792 9.24499 10.851 8.97892 10.9621 8.58898C11.0731 8.19904 10.6256 7.98723 10.3899 7.98723C10.1541 7.98723 9.90053 7.98723 9.83064 7.98723C9.76074 7.98723 9.57749 7.99949 9.51832 8.26292Z" fill="white" />
+                        <path d="M11.47 14.2134H9.45766C9.22836 14.2134 9.04248 14.3696 9.04248 14.5623C9.04248 14.755 9.22836 14.9112 9.45766 14.9112H11.47C11.6993 14.9112 11.8852 14.755 11.8852 14.5623C11.8852 14.3696 11.6993 14.2134 11.47 14.2134Z" fill="#979797" />
+                        <path d="M11.3002 15.1896H9.62807C9.39877 15.1896 9.21289 15.3458 9.21289 15.5385C9.21289 15.7312 9.39877 15.8874 9.62807 15.8874H11.3002C11.5295 15.8874 11.7154 15.7312 11.7154 15.5385C11.7154 15.3458 11.5295 15.1896 11.3002 15.1896Z" fill="#979797" />
+                      </svg>
+                    </BoxButton>
+                  </div>
+                  {
+                    state.files.map((item, index) => {
+                      const titles = item.slug.split("-");
+                      return (
+                        <>
+                          <li key={`file${index}`} onClick={() => HandlerState(item)}>
+                            <span>
+                              <p>{titles[0]}</p>
+                              <b>Exercise:</b> {` ${titles[1]}`}
+                            </span>
+                            <svg width="22" height="22" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="6" cy="6" r="6" fill="#21B761" />
+                              <path d="M4.54235 7.81183L2.64582 5.91529L2 6.55657L4.54235 9.09892L10 3.64127L9.35873 3L4.54235 7.81183Z" fill="white" />
+                            </svg>
+                          </li>
+                        </>
+                      )
+                    }
+                    )
+                  }
+                </ul>
+              </div>
+              <div className="footer-container">
                 <BoxButton>
 
                   <svg width="26" height="26" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">

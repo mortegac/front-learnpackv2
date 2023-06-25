@@ -35,116 +35,7 @@ export const BoxButton = styled.a`
   justify-content: center;
   align-items: center;
   padding:${(props) => props.theme.space.s8};
-  ${(props) =>
-    props.fullwidth ? `
-      margin-right:${(props) => props.theme.space.s8};
-  `
-      : `margin-right:0;
-      
-  `}
-`;
-
-// ${(props) =>
-//   props.primary ? `
-
-// `
-//     : props.secondary ? `
-
-//     `
-//     :`
-
-// `}
-export const ButtonPrimary = styled.button`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-right:${(props) => props.theme.space.s16};
-  font-family: ${(props) => props.theme.typography.fontFamily};
-  line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-  font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-  cursor: pointer; 
-  color: ${(props) => props.theme.colors.white};
-  background: ${(props) => props.theme.colors.secondary};
-    
-  white-space: nowrap;
-  border-radius: ${(props) => props.theme.button.borderRadius};
-  border: none;
-  height: ${(props) => props.theme.button.height};
-  color:${(props) => props.theme.colors.white};
-  padding:${(props) => props.theme.button.padding};
-  
-  :hover {
-    // background-color: ${(props) => props.theme.colors.bgHover};
-    // color: ${(props) => props.theme.colors.white};
-    // border: 1px solid ${(props) => props.theme.colors.bgHover};
-  }
-  ${(props) =>
-    props.fullwidth ? `
-      svg {
-        margin-right:${(props) => props.theme.space.s12};
-      }
-  `
-      : `svg {
-        margin-right:0;
-      }
-  `}
-  p {
-    
-    font-family: ${(props) => props.theme.typography.fontFamily};
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-    font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-    cursor: pointer; 
-    color: ${(props) => props.theme.colors.white};
-  }
-
-  // @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-  //   width: 100%;
-  // }
-`;
-
-export const ButtonSecondary = styled.button`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  // margin-right:${(props) => props.theme.space.s16};
-  cursor: pointer; 
-  color: ${(props) => props.theme.colors.lighterGray};
-  background-color: ${(props) => props.theme.colors.white};
-  white-space: nowrap;
-  border-radius: ${(props) => props.theme.button.borderRadius};
-  border: solid 1px ${(props) => props.theme.colors.lighterGray};
-  height: ${(props) => props.theme.button.height};
-  padding:${(props) => props.theme.button.padding};
-  
-  // :hover {
-    // background-color: ${(props) => props.theme.colors.bgHover};
-    // color: ${(props) => props.theme.colors.white};
-    // border: 1px solid ${(props) => props.theme.colors.bgHover};
-  // }
-  ${(props) =>
-    props.fullwidth ? `
-      svg {
-        // margin-right:${(props) => props.theme.space.s12};
-      }
-  `
-      : `svg {
-        margin-right:0;
-      }
-  `}
-  p {
-    
-    font-family: ${(props) => props.theme.typography.fontFamily};
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-    font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-    cursor: pointer; 
-    color: ${(props) => props.theme.colors.lighterGray};
-  }
-
-  // @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-  //   width: 100%;
-  // }
+  // margin-right: 16px;
 `;
 
 export const ButtonTertiary = styled.button`
@@ -194,40 +85,44 @@ export const ButtonTertiary = styled.button`
 `;
 
 export const NavContainer = styled.div`
-  margin-top: -30px;
+
+  // position: fixed;
   border-radius: ${(props) => props.theme.button.borderRadius};
   border: none;
-
+  // top:${(props) => props.theme.space.s0};
+  padding-top:16px;
+  left: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
 
   align-items: center;
-  max-width: 1136px;
-  width: calc(100vw - 60px);
+  width: 100vw;
 
-  button {
-    padding: 8px 16px;
-    font-size: 16px;
-    height: 40px;
-  }
-
-  background: ${(props) => props.theme.colors.bgNavbar};
-  color: ${(props) => props.theme.colors.secondary};
   
-  // height: 71px;
+  background: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.secondary};
+  // z-index: 200;
+  height: 60px;
   width: 98%;
   
-  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+    max-width: 1136px;
+    top:${(props) => props.theme.space.s12};
+    width: calc(100vw - 60px);
+  }
+    border-radius:0px;
     width: 100%;
     justify-content: space-between;
-    margin-top: -10px;
-  }
+    top:0px;
+  // @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+  // }
 
   .navButton {
-    // height: 24px;
+    height: 24px;
   }
 `;
+
 export const SectionContainer = styled.div`
   max-width: ${(props) => props.theme.sliceContainer.maxWidth};
   width: 100%;

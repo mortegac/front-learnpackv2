@@ -35,9 +35,10 @@ export const BoxButton = styled.a`
   justify-content: center;
   align-items: center;
   padding:${(props) => props.theme.space.s16};
+  
   ${(props) =>
     props.fullwidth ? `
-      margin-right:${(props) => props.theme.space.s8};
+      margin-right:${(props) => props.theme.space.s0};
   `
       : `margin-right:0;
       
@@ -247,13 +248,7 @@ export const NavContainer = styled.div`
 
   align-items: center;
   width: 100vw;
-  
-  // button {
-  //   padding: 8px 16px;
-  //   font-size: 16px;
-  //   height: 40px;
-  // }
-  
+    
   background: ${(props) => props.theme.colors.bgNavbar};
   color: ${(props) => props.theme.colors.secondary};
   z-index: 200;
@@ -269,9 +264,7 @@ export const NavContainer = styled.div`
     width: 100%;
     justify-content: space-between;
     top:0px;
-  // @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
-  // }
-
+ 
   .navButton {
     height: 24px;
   }
@@ -362,20 +355,10 @@ export const LeftWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  
-  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
-    justify-content: space-between;
-  }
-  
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
-    img {
-      
-      margin-right: 32px;
-    }
-  }
-  
+
   img {
-    width: 50px;
+    margin-right: 24px;
+    width: 40px;
   }
   
   ul {
@@ -390,45 +373,6 @@ export const LeftWrap = styled.div`
     a {
       letter-spacing: 0px;
       height: 100%;
-      li {
-        position: relative;
-        height: 100%;
-        padding: 0 20px 0 20px;
-        margin: 0px;
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: bold;
-        color: ${(props) => props.theme.colors.secondary};
-        transition: color 0.4s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        letter-spacing: 0px;
-        &:hover {
-          color: ${(props) => props.theme.colors.bgHover};
-        }
-        .underline {
-          position: absolute;
-          width: 100%;
-          left: 0;
-          bottom: -1px;
-          transition: all 0.5s ease;
-          height: 2px;
-          background: ${(props) => props.theme.colors.primary};
-          opacity: 0;
-          transition: opacity 0.4s ease;
-        }
-      }
-    }
-    a.selected {
-      li {
-        letter-spacing: 0px;
-        color: ${(props) => props.theme.colors.primary};
-        .underline {
-          opacity: 1;
-        }
-      }
     }
   }
   .button-container {
@@ -535,7 +479,11 @@ export const SidebarContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: space-between;
-  width: 350px;
+  width: 100vw;
+  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 100vw;
+  }
+  
   position: fixed;
   top: 0;
   bottom: 0;
@@ -553,6 +501,7 @@ export const SidebarContainer = styled.div`
     margin-top: 38px;
     padding-left: 24px;
   }
+
 
   .header-container {
     position: absolute;
@@ -604,53 +553,119 @@ export const SidebarContainer = styled.div`
       }
     }
   }
-  ul {
-    list-style: none;
-    display: flex;
-    letter-spacing: 0px;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 0px;
-    margin-bottom: 0;
-    &:first-child {
-      margin-top: 81px;
-    }
-    li {
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 24px;
-      margin-bottom: 42px;
-      letter-spacing: 0px;
-      color: #00113399;
+  
+  .container {
+    margin-top: 44px;
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
+    transition: max-height 1s ease, height 1s ease;
+    
+   
+    
+    ul {
+      list-style: none;
       display: flex;
-      &.lang {
-        text-transform: uppercase;
-        svg {
-          margin-right: 8px;
-        }
-      }
-      &.selected {
-        a {
-          color: ${(props) => props.theme.colors.primary};
-        }
-      }
-      a {
+      letter-spacing: 0px;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+      padding: 0 32px;
+      margin-bottom: 16px;
+      // &:first-child {
+      //   margin-top: 81px;
+      // }
+      .box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
-        height: auto;
-        letter-spacing: 0px;
-        font-weight: normal;
-        text-decoration: none;
-        color: #00113399;
-        &.selected {
-          color: ${(props) => props.theme.colors.primary};
+        margin-bottom: 16px;
+        
+        span {
+          color: #a9a9a9;
+          font-size: 10px;
+          line-height: 20px;
+          font-weight: 300;
+          margin-right: 16px;
         }
+      }
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-family: ${(props) => props.theme.typography.fontFamily};
+        line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
+        font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
+        cursor: pointer; 
+        color: ${(props) => props.theme.colors.textPrimary};
+        background: ${(props) => props.theme.colors.bgColorLight};
+          
+        white-space: nowrap;
+        border-radius: ${(props) => props.theme.button.borderRadius};
+        border: none;
+        
+        padding:${(props) => props.theme.space.s20};
+        margin-bottom: 12px;
+        // :hover { }
+        
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          color: ${(props) => props.theme.colors.textPrimary};
+          
+          b {
+            color: #a9a9a9;
+            font-size: 12px;
+            line-height: 20px;
+            font-weight: 300;
+            margin-right:10px;
+          }
+          p {
+            display: flex;
+            justify-content: center;
+            font-size: 10px;
+            align-items: center;
+            width: 36px;
+            height: 36px;
+            // padding: 0 26px;
+            margin-right: 12px;
+            background: #008CC8;
+            border-radius: 22px;
+            background: #008CC8;
+            color: ${(props) => props.theme.colors.white};
+          }
+        }
+        &.lang {
+          text-transform: uppercase;
+          svg {
+            margin-right: 8px;
+          }
+        }
+        &.selected {
+          a {
+            color: ${(props) => props.theme.colors.primary};
+          }
+        }
+        a {
+          align-items: center;
+          height: auto;
+          letter-spacing: 0px;
+          font-weight: normal;
+          text-decoration: none;
+          color: #00113399;
+          &.selected {
+            color: ${(props) => props.theme.colors.primary};
+          }
+        }
+       
       }
     }
   }
-  // @media (max-width: 1000px) {
-  //   display: flex;
-  // }
+
   &.on {
     transform: translateX(0%);
   }

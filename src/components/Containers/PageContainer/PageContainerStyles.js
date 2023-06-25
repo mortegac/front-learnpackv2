@@ -10,7 +10,7 @@ export const PageContainerBase = styled.main`
   overflow: hidden;
   width: 100%;
   margin: 0;
-  margin-top: 64px;
+  margin-top: 74px;
   @media (max-width: ${(props) => props.theme.breakpoints.md}) {
     margin-top: 56px;
   }
