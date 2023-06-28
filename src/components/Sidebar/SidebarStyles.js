@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const container = {
   hidden: { opacity: 0 },
@@ -16,28 +16,28 @@ export const navMenuItems = {
 };
 
 export const Anchor = styled.a`
-margin: 0;
-&.fullwidth {
-  // @media (max-width: 768px) {
+  margin: 0;
+  &.fullwidth {
+    // @media (max-width: 768px) {
+    //   width: 100%;
+    // }
+  }
+  // @media (max-width: 500px) {
   //   width: 100%;
   // }
-}
-// @media (max-width: 500px) {
-//   width: 100%;
-// }
-text-decoration: none;
+  text-decoration: none;
 `;
-
 
 export const BoxButton = styled.a`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding:${(props) => props.theme.space.s16};
-  ${(props) =>
-    props.fullwidth ? `
-      margin-right:${(props) => props.theme.space.s8};
+  padding: ${props => props.theme.space.s16};
+  ${props =>
+    props.fullwidth
+      ? `
+      margin-right:${props => props.theme.space.s8};
   `
       : `margin-right:0;
       
@@ -59,30 +59,31 @@ export const ButtonPrimary = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-right:${(props) => props.theme.space.s16};
-  font-family: ${(props) => props.theme.typography.fontFamily};
-  line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-  font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-  cursor: pointer; 
-  color: ${(props) => props.theme.colors.white};
-  background: ${(props) => props.theme.colors.secondary};
-    
+  margin-right: ${props => props.theme.space.s16};
+  font-family: ${props => props.theme.typography.fontFamily};
+  line-height: ${props => props.theme.typography.p.desktop.lineHeight};
+  font-size: ${props => props.theme.typography.p.desktop.fontSize};
+  cursor: pointer;
+  color: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.secondary};
+
   white-space: nowrap;
-  border-radius: ${(props) => props.theme.button.borderRadius};
+  border-radius: ${props => props.theme.button.borderRadius};
   border: none;
-  height: ${(props) => props.theme.button.height};
-  color:${(props) => props.theme.colors.white};
-  padding:${(props) => props.theme.button.padding};
-  
+  height: ${props => props.theme.button.height};
+  color: ${props => props.theme.colors.white};
+  padding: ${props => props.theme.button.padding};
+
   :hover {
-    // background-color: ${(props) => props.theme.colors.bgHover};
-    // color: ${(props) => props.theme.colors.white};
-    // border: 1px solid ${(props) => props.theme.colors.bgHover};
+    // background-color: ${props => props.theme.colors.bgHover};
+    // color: ${props => props.theme.colors.white};
+    // border: 1px solid ${props => props.theme.colors.bgHover};
   }
-  ${(props) =>
-    props.fullwidth ? `
+  ${props =>
+    props.fullwidth
+      ? `
       svg {
-        margin-right:${(props) => props.theme.space.s12};
+        margin-right:${props => props.theme.space.s12};
       }
   `
       : `svg {
@@ -90,15 +91,14 @@ export const ButtonPrimary = styled.button`
       }
   `}
   p {
-    
-    font-family: ${(props) => props.theme.typography.fontFamily};
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-    font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-    cursor: pointer; 
-    color: ${(props) => props.theme.colors.white};
+    font-family: ${props => props.theme.typography.fontFamily};
+    line-height: ${props => props.theme.typography.p.desktop.lineHeight};
+    font-size: ${props => props.theme.typography.p.desktop.fontSize};
+    cursor: pointer;
+    color: ${props => props.theme.colors.white};
   }
 
-  // @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  // @media (max-width: ${props => props.theme.breakpoints.md}) {
   //   width: 100%;
   // }
 `;
@@ -108,25 +108,26 @@ export const ButtonSecondary = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  // margin-right:${(props) => props.theme.space.s16};
-  cursor: pointer; 
-  color: ${(props) => props.theme.colors.lighterGray};
-  background-color: ${(props) => props.theme.colors.white};
+  // margin-right:${props => props.theme.space.s16};
+  cursor: pointer;
+  color: ${props => props.theme.colors.lighterGray};
+  background-color: ${props => props.theme.colors.white};
   white-space: nowrap;
-  border-radius: ${(props) => props.theme.button.borderRadius};
-  border: solid 1px ${(props) => props.theme.colors.lighterGray};
-  height: ${(props) => props.theme.button.height};
-  padding:${(props) => props.theme.button.padding};
-  
+  border-radius: ${props => props.theme.button.borderRadius};
+  border: solid 1px ${props => props.theme.colors.lighterGray};
+  height: ${props => props.theme.button.height};
+  padding: ${props => props.theme.button.padding};
+
   // :hover {
-    // background-color: ${(props) => props.theme.colors.bgHover};
-    // color: ${(props) => props.theme.colors.white};
-    // border: 1px solid ${(props) => props.theme.colors.bgHover};
+  // background-color: ${props => props.theme.colors.bgHover};
+  // color: ${props => props.theme.colors.white};
+  // border: 1px solid ${props => props.theme.colors.bgHover};
   // }
-  ${(props) =>
-    props.fullwidth ? `
+  ${props =>
+    props.fullwidth
+      ? `
       svg {
-        // margin-right:${(props) => props.theme.space.s12};
+        // margin-right:${props => props.theme.space.s12};
       }
   `
       : `svg {
@@ -134,15 +135,14 @@ export const ButtonSecondary = styled.button`
       }
   `}
   p {
-    
-    font-family: ${(props) => props.theme.typography.fontFamily};
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-    font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-    cursor: pointer; 
-    color: ${(props) => props.theme.colors.lighterGray};
+    font-family: ${props => props.theme.typography.fontFamily};
+    line-height: ${props => props.theme.typography.p.desktop.lineHeight};
+    font-size: ${props => props.theme.typography.p.desktop.fontSize};
+    cursor: pointer;
+    color: ${props => props.theme.colors.lighterGray};
   }
 
-  // @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  // @media (max-width: ${props => props.theme.breakpoints.md}) {
   //   width: 100%;
   // }
 `;
@@ -152,56 +152,56 @@ export const ButtonTertiary = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-right:${(props) => props.theme.space.s16};
-  cursor: pointer; 
-  color: ${(props) => props.theme.colors.white};
-  background: ${(props) => props.theme.colors.white};
-    
+  margin-right: ${props => props.theme.space.s16};
+  cursor: pointer;
+  color: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.white};
+
   white-space: nowrap;
-  border-radius: ${(props) => props.theme.button.borderRadius};
+  border-radius: ${props => props.theme.button.borderRadius};
   border: none;
-  height: ${(props) => props.theme.button.height};
-  
+  height: ${props => props.theme.button.height};
+
   :hover {
-    // background-color: ${(props) => props.theme.colors.bgHover};
-    // color: ${(props) => props.theme.colors.white};
-    // border: 1px solid ${(props) => props.theme.colors.bgHover};
+    // background-color: ${props => props.theme.colors.bgHover};
+    // color: ${props => props.theme.colors.white};
+    // border: 1px solid ${props => props.theme.colors.bgHover};
   }
-  ${(props) =>
-    props.fullwidth ? `
+  ${props =>
+    props.fullwidth
+      ? `
     svg {
-      margin-right:${(props) => props.theme.space.s12};
-      padding:${(props) => props.theme.button.padding};
+      margin-right:${props => props.theme.space.s12};
+      padding:${props => props.theme.button.padding};
     }
     `
       : `svg {
       margin-right:0;
-      padding:${(props) => props.theme.button.paddingMobile};
+      padding:${props => props.theme.button.paddingMobile};
       }
   `}
   p {
-    
-    font-family: ${(props) => props.theme.typography.fontFamily};
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-    font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-    cursor: pointer; 
-    color: ${(props) => props.theme.colors.secondary};
+    font-family: ${props => props.theme.typography.fontFamily};
+    line-height: ${props => props.theme.typography.p.desktop.lineHeight};
+    font-size: ${props => props.theme.typography.p.desktop.fontSize};
+    cursor: pointer;
+    color: ${props => props.theme.colors.secondary};
   }
 
-  // @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  // @media (max-width: ${props => props.theme.breakpoints.md}) {
   //   width: 100%;
   // }
 `;
 
 export const NavContainer = styled.div`
-width: 350px;
+  width: 350px;
   background-color: pink;
   position: absolute;
   z-index: 9000;
-  border-radius: ${(props) => props.theme.button.borderRadius};
+  border-radius: ${props => props.theme.button.borderRadius};
   border: none;
-  top:0;
-  
+  top: 0;
+
   right: 0;
   display: flex;
   flex-direction: row;
@@ -218,13 +218,13 @@ width: 350px;
     height: 40px;
   }
 
-  // background: ${(props) => props.theme.colors.bgNavbar};
-  color: ${(props) => props.theme.colors.secondary};
+  // background: ${props => props.theme.colors.bgNavbar};
+  color: ${props => props.theme.colors.secondary};
   // border-bottom: 1px solid rgba(0, 17, 51, 0.05);
   height: 71px;
   width: 98%;
-  
-  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
     width: 100%;
     justify-content: space-between;
   }
@@ -234,7 +234,7 @@ width: 350px;
   }
 `;
 export const SectionContainer = styled.div`
-  max-width: ${(props) => props.theme.sliceContainer.maxWidth};
+  max-width: ${props => props.theme.sliceContainer.maxWidth};
   width: 100%;
   height: 100%;
   display: flex;
@@ -242,8 +242,8 @@ export const SectionContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
-  
-  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
     padding: 0px;
   }
 
@@ -262,7 +262,6 @@ export const SectionContainer = styled.div`
     user-select: none;
     z-index: 500;
     margin-right: -13px;
-
   }
   .hamRotate.active {
     transform: rotate(45deg);
@@ -310,8 +309,8 @@ export const MobileWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  
-  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
     justify-content: space-between;
   }
 `;
@@ -321,21 +320,21 @@ export const LeftWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  
-  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
     justify-content: space-between;
   }
-  
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
     img {
       margin-right: 32px;
     }
   }
-  
+
   img {
     width: 50px;
   }
-  
+
   ul {
     display: flex;
     flex-direction: row;
@@ -356,7 +355,7 @@ export const LeftWrap = styled.div`
         font-size: 14px;
         line-height: 20px;
         font-weight: bold;
-        color: ${(props) => props.theme.colors.secondary};
+        color: ${props => props.theme.colors.secondary};
         transition: color 0.4s ease;
         display: flex;
         flex-direction: column;
@@ -364,7 +363,7 @@ export const LeftWrap = styled.div`
         align-items: center;
         letter-spacing: 0px;
         &:hover {
-          color: ${(props) => props.theme.colors.bgHover};
+          color: ${props => props.theme.colors.bgHover};
         }
         .underline {
           position: absolute;
@@ -373,7 +372,7 @@ export const LeftWrap = styled.div`
           bottom: -1px;
           transition: all 0.5s ease;
           height: 2px;
-          background: ${(props) => props.theme.colors.primary};
+          background: ${props => props.theme.colors.primary};
           opacity: 0;
           transition: opacity 0.4s ease;
         }
@@ -382,7 +381,7 @@ export const LeftWrap = styled.div`
     a.selected {
       li {
         letter-spacing: 0px;
-        color: ${(props) => props.theme.colors.primary};
+        color: ${props => props.theme.colors.primary};
         .underline {
           opacity: 1;
         }
@@ -427,20 +426,20 @@ export const RightWrap = styled.div`
         height: 100%;
         padding: 0 20px 0 20px;
         margin: 0px;
-        
-        color: ${(props) => props.theme.colors.textTertiary};
+
+        color: ${props => props.theme.colors.textTertiary};
         font-size: 14px;
         line-height: 20px;
         font-weight: 400;
         cursor: pointer;
-  
+
         transition: color 0.4s ease;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         &:hover {
-          color: ${(props) => props.theme.colors.bgHover};
+          color: ${props => props.theme.colors.bgHover};
         }
         .underline {
           position: absolute;
@@ -449,7 +448,7 @@ export const RightWrap = styled.div`
           bottom: -1px;
           transition: all 0.5s ease;
           height: 2px;
-          background: ${(props) => props.theme.colors.primary};
+          background: ${props => props.theme.colors.primary};
           opacity: 0;
           transition: opacity 0.4s ease;
         }
@@ -458,18 +457,18 @@ export const RightWrap = styled.div`
     a.selected {
       li {
         letter-spacing: 0px;
-        color: ${(props) => props.theme.colors.primary};
+        color: ${props => props.theme.colors.primary};
         .underline {
           opacity: 1;
         }
       }
     }
   }
-  .nav-item{
+  .nav-item {
     display: flex;
     flex-direction: row;
     svg {
-      margin-right: ${(props) => props.theme.space.s12};
+      margin-right: ${props => props.theme.space.s12};
     }
   }
   .button-container {
@@ -483,9 +482,6 @@ export const RightWrap = styled.div`
       }
     }
   }
-  
-  
-
 `;
 export const SidebarContainer = styled.div`
 position: absolute;
@@ -551,7 +547,7 @@ margin-top: -500px
     justify-content: center;
     align-items: center;
     padding: 24px 24px 8px;
-    // @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    // @media (max-width: ${props => props.theme.breakpoints.sm}) {
     //   flex-direction: column;
     //   gap: 24px;
     // }
@@ -595,7 +591,7 @@ margin-top: -500px
       }
       &.selected {
         a {
-          color: ${(props) => props.theme.colors.primary};
+          color: ${props => props.theme.colors.primary};
         }
       }
       a {
@@ -606,7 +602,7 @@ margin-top: -500px
         text-decoration: none;
         color: #00113399;
         &.selected {
-          color: ${(props) => props.theme.colors.primary};
+          color: ${props => props.theme.colors.primary};
         }
       }
     }

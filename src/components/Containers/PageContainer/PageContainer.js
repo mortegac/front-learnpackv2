@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import { PageContainerBase } from "./PageContainerStyles";
+import PropTypes from 'prop-types';
+import { PageContainerBase } from './PageContainerStyles';
 
 const PageContainer = ({ children, ...rest }) => {
   return <PageContainerBase {...rest}>{children}</PageContainerBase>;

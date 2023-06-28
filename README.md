@@ -1,4 +1,3 @@
-
 <img align="right" src="./public/logo.png" >
 <h3 align="left" >LearnPack</h3>
 
@@ -26,8 +25,13 @@
 
 2. Run Linter `yarn lint`.
 
+## Design
+
+- [Link to 4geeks Figma](https://www.figma.com/file/d125akVdljVYGZ82DBarMx/New-UI?type=design&node-id=406%3A2&mode=design&t=I1Tn8O4YlFB2Q8EK-1)
+
 
 ## Dependencies
 
+- [Zustand](https://github.com/pmndrs/zustand)
 - [CRA](https://create-react-app.dev/)
 - [styled-components](https://styled-components.com/)

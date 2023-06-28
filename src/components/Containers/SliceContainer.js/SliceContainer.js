@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import { SliceContainerBase } from "./SliceContainerStyles";
+import PropTypes from 'prop-types';
+import { SliceContainerBase } from './SliceContainerStyles';
 
 const SliceContainer = ({ children, ...rest }) => (
   <SliceContainerBase {...rest}>{children}</SliceContainerBase>

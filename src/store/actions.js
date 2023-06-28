@@ -1,20 +1,17 @@
-import { getParams } from "./utils";
-const fullURL = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '');
+import { getParams } from './utils';
+const fullURL =
+  location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '');
 
 export const getHost = function () {
-    let preConfig = getParams("config");
-    if (preConfig && preConfig !== "") preConfig = JSON.parse(atob(preConfig));
+  let preConfig = getParams('config');
+  if (preConfig && preConfig !== '') preConfig = JSON.parse(atob(preConfig));
 
-    console.log('host', getParams('host'));
-    const HOST = preConfig ? `${preConfig.address}:${preConfig.port}` : process.env.HOST || getParams('host') || fullURL;
-    return HOST;
+  console.log('host', getParams('host'));
+  const HOST = preConfig
+    ? `${preConfig.address}:${preConfig.port}`
+    : process.env.HOST || getParams('host') || fullURL;
+  return HOST;
 };
-
-
-
-
-
-
 
 // export const loadExercises = function () {
 //     return new Promise((resolve, reject) =>

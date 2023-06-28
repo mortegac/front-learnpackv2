@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const container = {
   hidden: { opacity: 0 },
@@ -16,29 +16,29 @@ export const navMenuItems = {
 };
 
 export const Anchor = styled.a`
-margin: 0;
-&.fullwidth {
-  // @media (max-width: 768px) {
+  margin: 0;
+  &.fullwidth {
+    // @media (max-width: 768px) {
+    //   width: 100%;
+    // }
+  }
+  // @media (max-width: 500px) {
   //   width: 100%;
   // }
-}
-// @media (max-width: 500px) {
-//   width: 100%;
-// }
-text-decoration: none;
+  text-decoration: none;
 `;
-
 
 export const BoxButton = styled.a`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding:${(props) => props.theme.space.s16};
-  
-  ${(props) =>
-    props.fullwidth ? `
-      margin-right:${(props) => props.theme.space.s0};
+  padding: ${props => props.theme.space.s16};
+
+  ${props =>
+    props.fullwidth
+      ? `
+      margin-right:${props => props.theme.space.s0};
   `
       : `margin-right:0;
       
@@ -61,42 +61,40 @@ export const ButtonPrimary = styled.button`
   justify-content: center;
   align-items: center;
 
-  font-family: ${(props) => props.theme.typography.fontFamily};
-  line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-  font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-  cursor: pointer; 
-  color: ${(props) => props.theme.colors.white};
-  background: ${(props) => props.theme.colors.secondary};
-    
+  font-family: ${props => props.theme.typography.fontFamily};
+  line-height: ${props => props.theme.typography.p.desktop.lineHeight};
+  font-size: ${props => props.theme.typography.p.desktop.fontSize};
+  cursor: pointer;
+  color: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.secondary};
+
   white-space: nowrap;
-  border-radius: ${(props) => props.theme.button.borderRadius};
+  border-radius: ${props => props.theme.button.borderRadius};
   border: none;
-  color:${(props) => props.theme.colors.white};
-  padding:${(props) => props.theme.button.padding};
-  
+  color: ${props => props.theme.colors.white};
+  padding: ${props => props.theme.button.padding};
+
   :hover {
   }
-  
-  margin-right:${(props) => props.theme.space.s8};
-  
 
-  ${(props) =>
-    props.fullwidth ? ` 
-        margin-right:${(props) => props.theme.space.s0};
+  margin-right: ${props => props.theme.space.s8};
+
+  ${props =>
+    props.fullwidth
+      ? ` 
+        margin-right:${props => props.theme.space.s0};
       `
-      : ``
-  }
-  
+      : ''}
+
   svg {
-    margin-right:${(props) => props.theme.space.s4};
+    margin-right: ${props => props.theme.space.s4};
   }
   p {
-    
-    font-family: ${(props) => props.theme.typography.fontFamily};
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-    font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-    cursor: pointer; 
-    color: ${(props) => props.theme.colors.white};
+    font-family: ${props => props.theme.typography.fontFamily};
+    line-height: ${props => props.theme.typography.p.desktop.lineHeight};
+    font-size: ${props => props.theme.typography.p.desktop.fontSize};
+    cursor: pointer;
+    color: ${props => props.theme.colors.white};
   }
 `;
 
@@ -106,42 +104,40 @@ export const ButtonSecondary = styled.button`
   justify-content: center;
   align-items: center;
 
-  font-family: ${(props) => props.theme.typography.fontFamily};
-  line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-  font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-  cursor: pointer; 
-  color: ${(props) => props.theme.colors.white};
-  // background: ${(props) => props.theme.colors.secondary};
-    
+  font-family: ${props => props.theme.typography.fontFamily};
+  line-height: ${props => props.theme.typography.p.desktop.lineHeight};
+  font-size: ${props => props.theme.typography.p.desktop.fontSize};
+  cursor: pointer;
+  color: ${props => props.theme.colors.white};
+  // background: ${props => props.theme.colors.secondary};
+
   white-space: nowrap;
-  border-radius: ${(props) => props.theme.button.borderRadius};
+  border-radius: ${props => props.theme.button.borderRadius};
   border: none;
-  color:${(props) => props.theme.colors.white};
-  padding:${(props) => props.theme.button.padding};
-  
+  color: ${props => props.theme.colors.white};
+  padding: ${props => props.theme.button.padding};
+
   :hover {
   }
-  
-  margin-right:${(props) => props.theme.space.s8};
-  
 
-  ${(props) =>
-    props.fullwidth ? ` 
-        margin-right:${(props) => props.theme.space.s0};
+  margin-right: ${props => props.theme.space.s8};
+
+  ${props =>
+    props.fullwidth
+      ? ` 
+        margin-right:${props => props.theme.space.s0};
       `
-      : ``
-  }
-  
+      : ''}
+
   svg {
-    margin-right:${(props) => props.theme.space.s4};
+    margin-right: ${props => props.theme.space.s4};
   }
   p {
-    
-    font-family: ${(props) => props.theme.typography.fontFamily};
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-    font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-    cursor: pointer; 
-    color: ${(props) => props.theme.colors.white};
+    font-family: ${props => props.theme.typography.fontFamily};
+    line-height: ${props => props.theme.typography.p.desktop.lineHeight};
+    font-size: ${props => props.theme.typography.p.desktop.fontSize};
+    cursor: pointer;
+    color: ${props => props.theme.colors.white};
   }
 `;
 
@@ -151,7 +147,7 @@ export const ButtonSecondary = styled.button`
 //   justify-content: center;
 //   align-items: center;
 //   // margin-right:${(props) => props.theme.space.s16};
-//   cursor: pointer; 
+//   cursor: pointer;
 //   color: ${(props) => props.theme.colors.lighterGray};
 //   background-color: ${(props) => props.theme.colors.white};
 //   white-space: nowrap;
@@ -180,7 +176,7 @@ export const ButtonSecondary = styled.button`
 //     font-family: ${(props) => props.theme.typography.fontFamily};
 //     line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
 //     font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-//     cursor: pointer; 
+//     cursor: pointer;
 //     color: ${(props) => props.theme.colors.lighterGray};
 //   }
 
@@ -194,53 +190,52 @@ export const ButtonTertiary = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-right:${(props) => props.theme.space.s16};
-  cursor: pointer; 
-  color: ${(props) => props.theme.colors.white};
-  background: ${(props) => props.theme.colors.white};
-    
+  margin-right: ${props => props.theme.space.s16};
+  cursor: pointer;
+  color: ${props => props.theme.colors.white};
+  background: ${props => props.theme.colors.white};
+
   white-space: nowrap;
-  border-radius: ${(props) => props.theme.button.borderRadius};
+  border-radius: ${props => props.theme.button.borderRadius};
   border: none;
-  height: ${(props) => props.theme.button.height};
-  
+  height: ${props => props.theme.button.height};
+
   :hover {
-    // background-color: ${(props) => props.theme.colors.bgHover};
-    // color: ${(props) => props.theme.colors.white};
-    // border: 1px solid ${(props) => props.theme.colors.bgHover};
+    // background-color: ${props => props.theme.colors.bgHover};
+    // color: ${props => props.theme.colors.white};
+    // border: 1px solid ${props => props.theme.colors.bgHover};
   }
-  ${(props) =>
-    props.fullwidth ? `
+  ${props =>
+    props.fullwidth
+      ? `
     svg {
-      margin-right:${(props) => props.theme.space.s12};
-      padding:${(props) => props.theme.button.padding};
+      margin-right:${props => props.theme.space.s12};
+      padding:${props => props.theme.button.padding};
     }
     `
       : `svg {
       margin-right:0;
-      padding:${(props) => props.theme.button.paddingMobile};
+      padding:${props => props.theme.button.paddingMobile};
       }
   `}
   p {
-    
-    font-family: ${(props) => props.theme.typography.fontFamily};
-    line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-    font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-    cursor: pointer; 
-    color: ${(props) => props.theme.colors.secondary};
+    font-family: ${props => props.theme.typography.fontFamily};
+    line-height: ${props => props.theme.typography.p.desktop.lineHeight};
+    font-size: ${props => props.theme.typography.p.desktop.fontSize};
+    cursor: pointer;
+    color: ${props => props.theme.colors.secondary};
   }
 
-  // @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  // @media (max-width: ${props => props.theme.breakpoints.md}) {
   //   width: 100%;
   // }
 `;
 
 export const NavContainer = styled.div`
-
   position: fixed;
-  border-radius: ${(props) => props.theme.button.borderRadius};
+  border-radius: ${props => props.theme.button.borderRadius};
   border: none;
-  top:${(props) => props.theme.space.s0};
+  top: ${props => props.theme.space.s0};
   left: auto;
   display: flex;
   flex-direction: row;
@@ -248,29 +243,29 @@ export const NavContainer = styled.div`
 
   align-items: center;
   width: 100vw;
-    
-  background: ${(props) => props.theme.colors.bgNavbar};
-  color: ${(props) => props.theme.colors.secondary};
+
+  background: ${props => props.theme.colors.bgNavbar};
+  color: ${props => props.theme.colors.secondary};
   z-index: 200;
   height: 60px;
   width: 98%;
-  
-  @media (min-width: ${(props) => props.theme.breakpoints.md}) {
+
+  @media (min-width: ${props => props.theme.breakpoints.md}) {
     max-width: 1136px;
-    top:${(props) => props.theme.space.s12};
+    top: ${props => props.theme.space.s12};
     width: calc(100vw - 60px);
   }
-    border-radius:0px;
-    width: 100%;
-    justify-content: space-between;
-    top:0px;
- 
+  border-radius: 0px;
+  width: 100%;
+  justify-content: space-between;
+  top: 0px;
+
   .navButton {
     height: 24px;
   }
 `;
 export const SectionContainer = styled.div`
-  max-width: ${(props) => props.theme.sliceContainer.maxWidth};
+  max-width: ${props => props.theme.sliceContainer.maxWidth};
   width: 100%;
   height: 100%;
   display: flex;
@@ -278,8 +273,6 @@ export const SectionContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
-  
-
 
   a {
     display: flex;
@@ -296,7 +289,6 @@ export const SectionContainer = styled.div`
     user-select: none;
     z-index: 500;
     margin-right: -13px;
-
   }
   .hamRotate.active {
     transform: rotate(45deg);
@@ -344,8 +336,8 @@ export const MobileWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  
-  @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
     justify-content: space-between;
   }
 `;
@@ -360,7 +352,7 @@ export const LeftWrap = styled.div`
     margin-right: 24px;
     width: 40px;
   }
-  
+
   ul {
     display: flex;
     flex-direction: row;
@@ -413,20 +405,20 @@ export const RightWrap = styled.div`
         height: 100%;
         padding: 0 20px 0 20px;
         margin: 0px;
-        
-        color: ${(props) => props.theme.colors.textTertiary};
+
+        color: ${props => props.theme.colors.textTertiary};
         font-size: 14px;
         line-height: 20px;
         font-weight: 400;
         cursor: pointer;
-  
+
         transition: color 0.4s ease;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         &:hover {
-          color: ${(props) => props.theme.colors.bgHover};
+          color: ${props => props.theme.colors.bgHover};
         }
         .underline {
           position: absolute;
@@ -435,7 +427,7 @@ export const RightWrap = styled.div`
           bottom: -1px;
           transition: all 0.5s ease;
           height: 2px;
-          background: ${(props) => props.theme.colors.primary};
+          background: ${props => props.theme.colors.primary};
           opacity: 0;
           transition: opacity 0.4s ease;
         }
@@ -444,18 +436,18 @@ export const RightWrap = styled.div`
     a.selected {
       li {
         letter-spacing: 0px;
-        color: ${(props) => props.theme.colors.primary};
+        color: ${props => props.theme.colors.primary};
         .underline {
           opacity: 1;
         }
       }
     }
   }
-  .nav-item{
+  .nav-item {
     display: flex;
     flex-direction: row;
     svg {
-      margin-right: ${(props) => props.theme.space.s12};
+      margin-right: ${props => props.theme.space.s12};
     }
   }
   .button-container {
@@ -469,9 +461,6 @@ export const RightWrap = styled.div`
       }
     }
   }
-  
-  
-
 `;
 export const SidebarContainer = styled.div`
   // display: none;
@@ -480,14 +469,14 @@ export const SidebarContainer = styled.div`
   justify-content: flex-start;
   align-items: space-between;
   width: 100vw;
-  @media (max-width: ${(props) => props.theme.breakpoints.md}) {
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
     width: 100vw;
   }
-  
+
   position: fixed;
   top: 0;
   bottom: 0;
-  
+
   right: 0;
   background: rgb(250, 250, 251);
   transform: translateX(100%);
@@ -501,7 +490,6 @@ export const SidebarContainer = styled.div`
     margin-top: 38px;
     padding-left: 24px;
   }
-
 
   .header-container {
     position: absolute;
@@ -518,10 +506,10 @@ export const SidebarContainer = styled.div`
     bottom: 0;
     width: 100%;
     height: 60px;
-    background-color: #DDDDDD;
+    background-color: #dddddd;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;;
+    justify-content: space-between;
     align-items: center;
     padding: 12px 12px;
     svg {
@@ -537,7 +525,7 @@ export const SidebarContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 24px 24px 8px;
-    // @media (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    // @media (max-width: ${props => props.theme.breakpoints.sm}) {
     //   flex-direction: column;
     //   gap: 24px;
     // }
@@ -553,16 +541,14 @@ export const SidebarContainer = styled.div`
       }
     }
   }
-  
+
   .container {
     margin-top: 44px;
     height: auto;
     max-height: 100vh;
     overflow-y: auto;
     transition: max-height 1s ease, height 1s ease;
-    
-   
-    
+
     ul {
       list-style: none;
       display: flex;
@@ -581,7 +567,7 @@ export const SidebarContainer = styled.div`
         justify-content: center;
         align-items: center;
         margin-bottom: 16px;
-        
+
         span {
           color: #a9a9a9;
           font-size: 10px;
@@ -595,34 +581,34 @@ export const SidebarContainer = styled.div`
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        font-family: ${(props) => props.theme.typography.fontFamily};
-        line-height:  ${(props) => props.theme.typography.p.desktop.lineHeight};
-        font-size: ${(props) => props.theme.typography.p.desktop.fontSize};
-        cursor: pointer; 
-        color: ${(props) => props.theme.colors.textPrimary};
-        background: ${(props) => props.theme.colors.bgColorLight};
-          
+        font-family: ${props => props.theme.typography.fontFamily};
+        line-height: ${props => props.theme.typography.p.desktop.lineHeight};
+        font-size: ${props => props.theme.typography.p.desktop.fontSize};
+        cursor: pointer;
+        color: ${props => props.theme.colors.textPrimary};
+        background: ${props => props.theme.colors.bgColorLight};
+
         white-space: nowrap;
-        border-radius: ${(props) => props.theme.button.borderRadius};
+        border-radius: ${props => props.theme.button.borderRadius};
         border: none;
-        
-        padding:${(props) => props.theme.space.s20};
+
+        padding: ${props => props.theme.space.s20};
         margin-bottom: 12px;
         // :hover { }
-        
+
         span {
           display: flex;
           justify-content: center;
           align-items: center;
           margin: 0;
-          color: ${(props) => props.theme.colors.textPrimary};
-          
+          color: ${props => props.theme.colors.textPrimary};
+
           b {
             color: #a9a9a9;
             font-size: 12px;
             line-height: 20px;
             font-weight: 300;
-            margin-right:10px;
+            margin-right: 10px;
           }
           p {
             display: flex;
@@ -633,10 +619,10 @@ export const SidebarContainer = styled.div`
             height: 36px;
             // padding: 0 26px;
             margin-right: 12px;
-            background: #008CC8;
+            background: #008cc8;
             border-radius: 22px;
-            background: #008CC8;
-            color: ${(props) => props.theme.colors.white};
+            background: #008cc8;
+            color: ${props => props.theme.colors.white};
           }
         }
         &.lang {
@@ -647,7 +633,7 @@ export const SidebarContainer = styled.div`
         }
         &.selected {
           a {
-            color: ${(props) => props.theme.colors.primary};
+            color: ${props => props.theme.colors.primary};
           }
         }
         a {
@@ -658,10 +644,9 @@ export const SidebarContainer = styled.div`
           text-decoration: none;
           color: #00113399;
           &.selected {
-            color: ${(props) => props.theme.colors.primary};
+            color: ${props => props.theme.colors.primary};
           }
         }
-       
       }
     }
   }

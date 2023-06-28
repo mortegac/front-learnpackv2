@@ -1,4 +1,4 @@
-import { SliceContainer, SectionContainer } from "./";
+import { SliceContainer, SectionContainer } from './';
 
 export const SliceFactory = (
   Slice,

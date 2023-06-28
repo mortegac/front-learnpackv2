@@ -1,14 +1,8 @@
-import PropTypes from "prop-types";
-import {
-  SectionContainerBase,
-} from "./SectionContainerStyles";
+import PropTypes from 'prop-types';
+import { SectionContainerBase } from './SectionContainerStyles';
 
-const SectionContainer = ({ children, bgImage, ...rest }) => {
-  return (
-    <SectionContainerBase {...rest}>
-      {children}
-    </SectionContainerBase>
-  );
+const SectionContainer = ({ children, ...rest }) => {
+  return <SectionContainerBase {...rest}>{children}</SectionContainerBase>;
 };
 
 SectionContainer.propTypes = {

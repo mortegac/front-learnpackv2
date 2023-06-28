@@ -1,9 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const DropdownContainer = styled.div`
   margin-top: -40px;
   margin-bottom: -40px;
-  
 
   svg {
     margin-left: 10px;
@@ -60,7 +59,7 @@ export const DropdownContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  color: ${(props) => props.theme.colors.textTertiary};
+  color: ${props => props.theme.colors.textTertiary};
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -75,7 +74,7 @@ export const DropdownContainer = styled.div`
     margin: 0px;
   }
   .inner-text {
-    color: ${(props) => props.theme.colors.lighterGray};
+    color: ${props => props.theme.colors.lighterGray};
     // padding: 0;
   }
   .lang-chevron {
@@ -128,7 +127,7 @@ export const DropdownContainer = styled.div`
           align-items: center;
           padding: 12px 24px;
           transition: background 0.3s ease;
-          color: ${(props) => props.theme.colors.lighterGray};
+          color: ${props => props.theme.colors.lighterGray};
           transition: color 0.3s ease;
           font-size: 14px;
           line-height: 24px;

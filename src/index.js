@@ -1,39 +1,35 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy } from 'react';
 
-import * as ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle, Theme } from "./styles/index";
+import * as ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle, Theme } from './styles/index';
 
-const Root = lazy(() => import("./routes/root"));
-const Uno = lazy(() => import("./routes/uno"));
-const Dos = lazy(() => import("./routes/dos"));
-const ErrorPage = lazy(() => import("./routes/error-page"));
-
+const Root = lazy(() => import('./routes/root'));
+const Uno = lazy(() => import('./routes/uno'));
+const Dos = lazy(() => import('./routes/dos'));
+const ErrorPage = lazy(() => import('./routes/error-page'));
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
     // Rutas anidadas
     children: [
       {
-        path: "uno",
+        path: 'uno',
         element: <Uno />,
       },
       {
-        path: "dos",
+        path: 'dos',
         element: <Dos />,
       },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Suspense fallback={<div>Loading...</div>}>
       <ThemeProvider theme={Theme}>
@@ -43,7 +39,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Suspense>
   </React.StrictMode>
 );
-
 
 // import reportWebVitals from './reportWebVitals';
 
